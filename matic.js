@@ -2,13 +2,13 @@ require("dotenv").config();
 const Web3 = require("web3");
 const BigNumber = require("bignumber.js");
 
-const web3 = new Web3("https://bsc-dataseed.binance.org/");
+const web3 = new Web3("https://polygon-rpc.com/");
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY; // Thay YOUR_PRIVATE_KEY bằng private key thực tế
 const FROM_ADDRESS = process.env.FROM_ADDRESS; // Thay YOUR_FROM_ADDRESS bằng địa chỉ ví nguồn
 const TO_ADDRESS = process.env.TO_ADDRESS; // Thay TO_ADDRESS bằng địa chỉ ví đích
 
-async function bsc_transaction() {
+async function polygon_transaction() {
   const gasPrice = await web3.eth.getGasPrice();
   const gasLimit = 21000; // Gas limit cho một giao dịch chuẩn
 
@@ -45,4 +45,4 @@ async function bsc_transaction() {
     });
 }
 
-bsc_transaction();
+polygon_transaction();
